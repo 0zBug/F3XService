@@ -1,3 +1,6 @@
+
+--Credit to notvroom on v3rm
+
 local Player = game.Players.LocalPlayer
 local serverEndpoint = Player.Character:FindFirstChild("ServerEndpoint", true) or Player:FindFirstChild("ServerEndpoint", true)
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn"}
