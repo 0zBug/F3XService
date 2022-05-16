@@ -9,7 +9,7 @@ A module that creates Instances with F3X Building Tools by firing remotes
 ### Object
 **Makes the instance editable and adds several functions.**
 ```html
-<table> F3XService.Obect(<Instance> Object)
+<table> F3XService.Object(<Instance> Object)
 ```
 ### Edit
 **Edits the properties of an instance.**
