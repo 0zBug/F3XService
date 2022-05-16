@@ -1,5 +1,5 @@
 # F3XService
-A module that creates Instances with F3X Building Tools by firing remotes
+**A module that creates Instances with F3X Building Tools by firing remotes.**
 # Documentation
 ### new
 **Instance.new but for F3X.**
