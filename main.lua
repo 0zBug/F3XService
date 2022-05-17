@@ -19,7 +19,8 @@ local SyncProperties = {
     CanCollide = "SyncCollision",
     Shape = "SyncShape",
     Name = "SetName",
-    Parent = "SetParent"
+    Parent = "SetParent",
+    Anchor = "SyncAnchored"
 }
 
 local Edit = {
