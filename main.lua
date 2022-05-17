@@ -20,7 +20,7 @@ local SyncProperties = {
     Shape = "SyncShape",
     Name = "SetName",
     Parent = "SetParent",
-    Anchor = "SyncAnchored"
+    Anchored = "SyncAnchor"
 }
 
 local Edit = {
