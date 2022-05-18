@@ -1,4 +1,3 @@
-
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Event = LocalPlayer.Character:FindFirstChild("ServerEndpoint", true) or LocalPlayer:FindFirstChild("ServerEndpoint", true)
@@ -13,6 +12,8 @@ local ClassNames = {
 
 local SyncProperties = {
     Material = "SyncMaterial",
+    Transparency = "SyncMaterial",
+    Reflectance = "SyncMaterial",
     Color = "SyncColor",
     Size = "SyncResize",
     CFrame = "SyncMove",
@@ -20,7 +21,8 @@ local SyncProperties = {
     Shape = "SyncShape",
     Name = "SetName",
     Parent = "SetParent",
-    Anchored = "SyncAnchor"
+    Anchored = "SyncAnchor",
+    Texture = "SyncTexture"
 }
 
 local Edit = {
@@ -78,6 +80,12 @@ function F3X.Edit(Object, Properties)
                     Event:InvokeServer(Sync, {Object}, Value)
                 elseif Sync == "SyncShape" then
                     F3X.Object(Object):AddMesh().MeshType = tostring(Value) == "Ball" and "Sphere" or Value
+                elseif Sync == "SyncTexture" then
+                    if Object.ClassName == "Decal" then
+                        Event:InvokeServer(Sync, {{Part = Object, TextureType = "Decal", [Property] = Value}})
+                    elseif Object.ClassName == "Texture" then
+                        Event:InvokeServer(Sync, {{Part = Object, TextureType = "Texture", [Property] = Value}})
+                    end
                 else
                     pcall(function()
                         Event:InvokeServer(Sync, {{Part = Object, [Property] = Value}})
